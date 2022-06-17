@@ -21,5 +21,6 @@ namespace CabInvoiceGeneratorTest
             int actualresult=invoiceGenerator.calculateAggregateTotalFare();
             Assert.That(actualresult, Is.EqualTo(215));
         }
+
     }
 }

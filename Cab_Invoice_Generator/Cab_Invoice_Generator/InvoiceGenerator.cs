@@ -35,5 +35,13 @@ namespace Cab_Invoice_Generator
             }
             return totalFare;
         }
+        public int[] EnhancedInvoiceDetails()
+        {
+            int[] details = new int[3];
+            details[0] = rides.Count();
+            details[1] = calculateAggregateTotalFare();
+            details[2] = (int)(details[1] / details[0]);
+            return details;
+        }
     }
 }
