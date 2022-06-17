@@ -19,13 +19,20 @@ namespace Cab_Invoice_Generator
             int totFare = (distance * COST_PER_KM) + (COST_PER_MIN * time) + MIN_FARE;
             return totFare;
         }
-        public void SetMultipleRidesDetails(int distance, int time)
+        public void SetMultipleRidesDetails(string userId,int distance, int time)
         {
             ride = new Rides();
             ride.RideDistance = distance;
             ride.RideTime = time;
             rides.Add(ride);
-            
+            if (RidesRepository.RideDetails.ContainsKey(userId))
+            {
+                RidesRepository.RideDetails[userId] = rides;
+            }
+            else
+            {
+                RidesRepository.RideDetails.Add(userId, rides);
+            }
         }
         public int calculateAggregateTotalFare()
         {
