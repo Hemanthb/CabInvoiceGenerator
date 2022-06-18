@@ -11,5 +11,7 @@ namespace Cab_Invoice_Generator
         
         public int RideDistance { get; set; }
         public int RideTime { get; set; }
+
+        public int RideChoice { get; set; }
     }
 }

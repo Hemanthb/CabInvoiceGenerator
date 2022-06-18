@@ -22,7 +22,7 @@ namespace Cab_Invoice_Generator
                 Console.WriteLine("Total Rides Taken -> " + NoOfRides);
                 foreach(Rides ride in RideDetails[userID])
                 {
-                    total += invoice.FareCalculator(ride.RideDistance, ride.RideTime);
+                    total += invoice.FareCalculator(ride.RideDistance, ride.RideTime,ride.RideChoice);
                 }
                 Console.WriteLine("Total Aggregate cost -> " + total);
                 Console.WriteLine("Average Aggregate cost -> " + (total/ userID.Count()));
